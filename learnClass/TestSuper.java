@@ -9,6 +9,14 @@ public class TestSuper {
 class FatherClass{
     public int value;
 
+    public FatherClass(){
+        System.out.println("create father class");
+    }
+
+    public FatherClass(int i){
+        System.out.println("create father class 2");
+    }
+
     public void f(){
         value = 100;
         System.out.println("FatherClass: " + value);
@@ -17,6 +25,14 @@ class FatherClass{
 
 class ChildClass extends FatherClass{
     public int value;
+
+    public ChildClass(){
+        // 第一句默认super()，编译器会自动生成，先调用父类的构造方法
+        // super();
+        // 显式调用可传参数，控制调用父类的哪个构造方法
+        super(1);
+        System.out.println("create child class");
+    }
 
     @Override
     public void f(){
