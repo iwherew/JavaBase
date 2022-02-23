@@ -6,6 +6,8 @@ public class TestArray {
         int[] arr1 = new int[10]; // 推荐用法
         String arr2[] = new String[5];
 
+        String[] s1 = {"a","b","c","d","e"};
+
         User[] arr3 = new User[3];
 
         arr1[0] = 5;
