@@ -5,6 +5,9 @@ import java.util.Map;
 
 /**
  * Map是接口，HashMap是实现类
+ *
+ * HashMap: 线程不安全，效率高。允许 key 或 value 为 null
+ * HashTable: 线程安全，效率低。不允许 key 或 value 为 null
  * */
 
 public class TestMap {
