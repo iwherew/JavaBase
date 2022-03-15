@@ -4,10 +4,12 @@ package learnThread;
  * 多个线程同时操作一个对象
  * 问题：多个线程同时操作一个资源的情况下，线程不安全，数据紊乱
  * */
-public class TestThread4 implements Runnable{
+public class UnsafeBuyTicket implements Runnable{
     private int ticketNums = 10;
 
     @Override
+    // 解决方法 在方法加 synchronized
+//    public synchronized void run() {
     public void run() {
         while(true){
             if(ticketNums<=0){
@@ -24,7 +26,7 @@ public class TestThread4 implements Runnable{
     }
 
     public static void main(String[] args) {
-        TestThread4 ticket = new TestThread4();
+        UnsafeBuyTicket ticket = new UnsafeBuyTicket();
 
         new Thread(ticket,"小明").start();
         new Thread(ticket,"老师").start();
